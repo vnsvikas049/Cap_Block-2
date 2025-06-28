@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dynamic List with Styled Items</title>
+</head>
+<body>
+
+ 
+  <ul id="item-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+ 
+  <button id="add-button">Add Item</button>
+
+  <script>
+   
+    const ul = document.querySelector('#item-list');
+    const button = document.querySelector('#add-button');
+
+    
+    button.addEventListener('click', () => {
+      
+      const newLi = document.createElement('li');
+
+     
+      newLi.textContent = "New Item";
+
+      
+      const sequenceNumber = ul.children.length + 1;
+
+      
+      if (sequenceNumber % 2 === 1) {
+       
+        newLi.style.fontWeight = 'bold';
+        newLi.style.color = 'blue';
+      } else {
+        
+        newLi.style.fontStyle = 'italic';
+        newLi.style.color = 'red';
+      }
+
+      
+      ul.appendChild(newLi);
+    });
+  </script>
+
+</body>
+</html>
